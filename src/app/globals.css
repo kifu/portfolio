@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-mono: var(--font-jetbrains-mono);
+  --color-background: var(--bg);
+  --color-foreground: var(--fg);
+}
+
+:root {
+  --bg: #000000;
+  --fg: #ffffff;
+}
+
+:root.inverted {
+  --bg: #ffffff;
+  --fg: #000000;
+}
+
+
+
+::selection {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono), 'Courier New', monospace;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.section-heading {
+  font-size: clamp(2.5rem, 6vw, 6rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+.kbd-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 40;
+  background-color: var(--bg);
+  border-top: 1px solid var(--fg);
+  padding: 0.5rem 1rem;
+  font-size: clamp(14px, 3vw, 16px);
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  justify-content: space-between;
+  gap: 0.25rem 1rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.kbd-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.kbd-bar span {
+  opacity: 0.9;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.kbd-shortcut {
+  background-color: var(--fg);
+  color: var(--bg);
+  padding: 0 0.25rem;
+  margin-right: 0.25rem;
+  font-weight: bold;
+}
+
+.kbd-bar span:hover {
+  opacity: 1;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--fg);
+  opacity: 0.3;
+}
+
+a {
+  text-decoration: none;
+  color: var(--fg);
+  transition: opacity 0.15s ease;
+}
+
+a:hover {
+  opacity: 0.6;
+}
