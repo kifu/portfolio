@@ -1,0 +1,10 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="64" height="64" fill="#000000" />
+  
+  <!-- ">" symbol -->
+  <polyline points="14,16 34,32 14,48" fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="square" stroke-linejoin="miter" />
+  
+  <!-- "_" symbol -->
+  <line x1="38" y1="48" x2="54" y2="48" stroke="#ffffff" stroke-width="6" stroke-linecap="square" />
+</svg>
