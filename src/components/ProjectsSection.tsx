@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import { useTextScramble } from "@/hooks/useTextScramble";
+import Image from "next/image";
 
 const projects = [
   {
@@ -144,9 +145,11 @@ function ProjectItem({
       {/* Expandable Preview */}
       {isExpanded && project.images.length > 0 && (
         <div className="mt-8 mx-auto animate-fade-in flex flex-col items-center">
-          <img
+          <Image
             src={project.images[currentImageIndex]}
             alt={`Preview ${currentImageIndex + 1} of ${project.name}`}
+            width={1920}
+            height={1080}
             className="h-[200px] md:h-[300px] lg:h-[400px] w-auto max-w-full object-contain cursor-zoom-in hover:opacity-90 transition-opacity"
             onClick={() => setIsFullscreen(true)}
           />
@@ -191,9 +194,11 @@ function ProjectItem({
           </button>
 
           <div className="relative z-10 w-full flex flex-col items-center justify-center pointer-events-none">
-            <img
+            <Image
               src={project.images[currentImageIndex]}
               alt={`Fullscreen Preview of ${project.name}`}
+              width={1920}
+              height={1080}
               className="max-w-full max-h-[80vh] object-contain pointer-events-auto"
             />
 
