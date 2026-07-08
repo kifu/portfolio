@@ -69,6 +69,7 @@ export default function Home() {
               <div className="mt-6">
                 <a
                   href="/CV_Andi_Syaichul_Mubaraq.pdf"
+                  download
                   className="inline-block border border-current px-5 py-3 text-base md:text-lg font-bold hover:opacity-60 transition-opacity"
                 >
                   [ ↓ DOWNLOAD CV ]
